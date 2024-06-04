@@ -23,7 +23,7 @@ const Product = () => {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`https://shipshop-server.vercel.app//product/${params.id}`)
+        axios.get(`https://shipshop-server.vercel.app/product/${params.id}`)
             .then(res => {
                 setProduct(res.data.product)
             })

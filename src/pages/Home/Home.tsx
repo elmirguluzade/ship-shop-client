@@ -32,10 +32,10 @@ const Home = () => {
   }
 
   useEffect(() => {
-    axios.get('https://shipshop-server.vercel.app//product/top4price')
+    axios.get('https://shipshop-server.vercel.app/product/top4price')
       .then(res => setTop4P(res.data.products))
       .catch(err => console.log(err))
-    axios.get('https://shipshop-server.vercel.app//product/top4time')
+    axios.get('https://shipshop-server.vercel.app/product/top4time')
       .then(res => setTop4T(res.data.products))
       .catch(err => console.log(err))
     window.scrollTo(0, 0)

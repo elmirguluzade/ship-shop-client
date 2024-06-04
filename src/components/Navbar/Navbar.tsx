@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    axios.get("https://shipshop-server.vercel.app//product/category").then((res) => {
+    axios.get("https://shipshop-server.vercel.app/product/category").then((res) => {
       setCategories(res.data.categories);
     });
   }, []);

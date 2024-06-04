@@ -33,7 +33,7 @@ const Products: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    axios.get('https://shipshop-server.vercel.app//product/category')
+    axios.get('https://shipshop-server.vercel.app/product/category')
       .then((res) => {
         const allCategories = res.data.categories
         setCategories(allCategories)

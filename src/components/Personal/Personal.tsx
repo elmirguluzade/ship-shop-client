@@ -33,7 +33,7 @@ const PersonalInformation = () => {
       return;
     }
 
-    axios.post('http://:5000/user/updateInfo', 
+    axios.post('https://shipshop-server.vercel.app/user/updateInfo', 
     {
       name: details.name,
       email: details.email,

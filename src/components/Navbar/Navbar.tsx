@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    axios.get("https://shipshop-server.vercel.app/product/category").then((res) => {
+    axios.get("http://localhost:4000/product/category").then((res) => {
       setCategories(res.data.categories);
     });
   }, []);
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
   const logout = () => {
     axios
       .post(
-        "https://shipshop-server.vercel.app/user/logout",
+        "http://localhost:4000/user/logout",
         {
           cart: cart.cartItems,
           favortie: favortie.favouriteItems,
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("https://shipshop-server.vercel.app/user/verify", { withCredentials: true })
+      .get("http://localhost:4000/user/verify", { withCredentials: true })
       .then((res) => {
         dispatch(handleLog({ id: res.data.user.id }));
       })
@@ -105,8 +105,7 @@ const Navbar: React.FC = () => {
             <h2>Logo</h2>
           </Link>
         </div>
-
-        <div className={styles.searchContainer}>
+        {innerWidth > 768 ?  <div className={styles.searchContainer}>
           <select
             className={styles.searchTypeSelect}
             value={searchType}
@@ -115,8 +114,7 @@ const Navbar: React.FC = () => {
             <option value="Statement">Statement</option>
           </select>
           {searchType === "Keyword" ? <Search /> : <Statement />}
-        </div>
-
+        </div> : null}
         {isLogged.length === 0 ? (
           <div className={styles.links}>
             <Link to={"/login"}>Login</Link>
@@ -169,9 +167,7 @@ const Navbar: React.FC = () => {
                   <button>Go To Cart</button>
                 </Link>
               </div>
-            ) : (
-              ""
-            )}
+            ) : ("")}
           </div>
         )}
       </nav>
@@ -180,6 +176,16 @@ const Navbar: React.FC = () => {
       ) : menuState ? (
         <NavMenu {...{ categories }} />
       ) : null}
+      {innerWidth <= 768 ?  <div className={styles.searchContainer}>
+          <select
+            className={styles.searchTypeSelect}
+            value={searchType}
+            onChange={(e) => setSearchType(e.target.value)}>
+            <option value="Keyword">Keyword</option>
+            <option value="Statement">Statement</option>
+          </select>
+          {searchType === "Keyword" ? <Search /> : <Statement />}
+        </div> : null}
     </header>
   );
 };

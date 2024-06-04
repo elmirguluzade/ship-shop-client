@@ -13,9 +13,9 @@ const Statement = () => {
   const dispatch = useAppDispatch();
 
   const extractKeywords = (query: string) => {
-    const colorRegex = /(blue|red|green|black|white|yellow|grey|gold|silver)/i;
+    const colorRegex = /(red|green|black|white|yellow|grey|gold|silver|orange|purple|brown)/i;
     const priceRegex = /\$(\d+)|(\d+)\sdollars?/;
-    const nameRegex = /iphone|macbook|samsung|microsoft/i;
+    const nameRegex = /iphone|macbook|samsung|microsoft|oppo|infinix|hp|perfume|serum|decoration|lamp|fujifilm|watch|laptop|airpods|headphone|dell|ipad/i;
 
     const colorMatch = query.match(colorRegex);
     const priceMatch = query.match(priceRegex);
@@ -36,22 +36,14 @@ const Statement = () => {
     fetchProductsData();
   }, [dispatch]);
 
+
   useEffect(() => {
     const filterProducts = () => {
       const { price, name, color } = extractKeywords(search);
-
       let filteredProducts = products;
-
-      if (name) {
-        filteredProducts = filteredProducts.filter(product => product.title.toLowerCase().includes(name.toLowerCase()));
-      }
-      if (color) {
-        filteredProducts = filteredProducts.filter(product => product.colors.includes(color.toLowerCase()));
-      }
-      if (price) {
-        filteredProducts = filteredProducts.filter(product => product.price <= parseInt(price));
-      }
-      console.log(filteredProducts)
+      if (name) filteredProducts = filteredProducts.filter(product => product.title.toLowerCase().includes(name.toLowerCase()));
+      if (color) filteredProducts = filteredProducts.filter(product => product.colors.includes(color.toLowerCase()));
+      if (price) filteredProducts = filteredProducts.filter(product => product.price <= parseInt(price));
       setResult(filteredProducts);
     };
 
@@ -61,6 +53,7 @@ const Statement = () => {
 
     return () => clearTimeout(result);
   }, [search, products]);
+
 
   return (
     <div className={styles.input}>

@@ -1,5 +1,4 @@
 import styles from './Footer.module.scss'
-import logo from '../../assets/logo.png'
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineTwitter, AiOutlineMail } from 'react-icons/ai'
 import { BsFacebook, BsTelephone } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'

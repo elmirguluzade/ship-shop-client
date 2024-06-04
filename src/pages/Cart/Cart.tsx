@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styles from './Cart.module.scss'
 import { FiShoppingCart } from 'react-icons/fi'
 import { BsTrash } from 'react-icons/bs'

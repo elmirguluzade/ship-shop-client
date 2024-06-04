@@ -1,5 +1,4 @@
 // import shoppingcart from '../../assets/shopping-cart.png'
-import Orders from '../../components/Orders/Orders'
 import Favorite from '../../components/Favorite/Favorite'
 import Personal from '../../components/Personal/Personal'
 import Password from '../../components/Password/Password'
@@ -33,10 +32,12 @@ const Profile = () => {
                         <IoMdKey /> Change Password</p>
                 </div>
             </div>
-            {currentPage == "" ? <Orders/> : 
+            {
             currentPage == "favorite" ? <Favorite /> : 
             currentPage == "personal" ? <Personal /> :
-            currentPage == "password" ? <Password /> : null}
+            currentPage == "password" ? <Password /> : 
+            null
+            }
         </div>
     )
 }

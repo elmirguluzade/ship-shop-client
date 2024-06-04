@@ -7,7 +7,6 @@ import { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
-import { addFavorite } from '../../redux/features/favouriteSlice'
 import { restoreCart } from '../../redux/features/cartSlice'
 import { handleUser } from '../../redux/features/userSlice'
 

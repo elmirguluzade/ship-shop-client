@@ -21,6 +21,8 @@ const Product = () => {
         window.scroll(0, 0)
     }, [])
 
+    console.log(product)
+    
     useEffect(() => {
         setLoading(true)
         axios.get(`https://shipshop-server.vercel.app/product/${params.id}`)

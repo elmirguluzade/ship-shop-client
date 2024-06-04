@@ -9,7 +9,7 @@ const NavMenu: React.FC<ICategory> = (props: ICategory) => {
     return (
         <>
         {
-            window.location.pathname.split('/')[1] === "product" ? null : 
+            window.location.pathname.split('/')[1] === "product" || window.location.pathname === "/products" ? null : 
             <div className={styles.menu}>
                 <ul>
                     {

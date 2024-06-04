@@ -122,7 +122,7 @@ const Products: React.FC = () => {
 
   const style= {
     ...((products.length === 0) && { height: '100vh' }),
-    ...(params.brand ? { marginTop: '100px' } : { marginTop: '145px' }),
+    ...(params.brand ? { marginTop: '100px' } : { marginTop: '95px' }),
   };
 
   return (

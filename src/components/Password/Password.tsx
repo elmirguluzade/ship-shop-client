@@ -74,7 +74,7 @@ const Password = () => {
         </div>
         <ToastContainer />
         <div className={styles.btn}>
-          <button style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}}>Save changes</button>
+          <button className={styles.btn} style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}}>Save changes</button>
         </div>
       </div>
 

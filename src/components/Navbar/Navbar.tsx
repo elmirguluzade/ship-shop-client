@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
   const logout = () => {
     axios
       .post(
-        "https://shipshop-server.vercel.app//user/logout",
+        "https://shipshop-server.vercel.app/user/logout",
         {
           cart: cart.cartItems,
           favortie: favortie.favouriteItems,
@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("https://shipshop-server.vercel.app//user/verify", { withCredentials: true })
+      .get("https://shipshop-server.vercel.app/user/verify", { withCredentials: true })
       .then((res) => {
         dispatch(handleLog({ id: res.data.user.id }));
       })

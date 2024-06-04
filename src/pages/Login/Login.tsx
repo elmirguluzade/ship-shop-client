@@ -31,7 +31,7 @@ const Login = () => {
       return
     }
 
-    axios.post('https://shipshop-server.vercel.app//user/login', formData, { withCredentials: true })
+    axios.post('https://shipshop-server.vercel.app/user/login', formData, { withCredentials: true })
       .then((res) => {
         toast.success('Login successfully', { position: "top-right", autoClose: 1000, hideProgressBar: false, closeOnClick: true, draggable: true, progress: undefined, theme: "light", });
         setTimeout(() => {
@@ -41,11 +41,9 @@ const Login = () => {
           navigate('/')
         }, 1000)
       })
-      .catch(err => {
-        if (err.response.data.message == "Not exist") {
-          toast.error('Email or password is invalid', { position: "top-right", autoClose: 1000, hideProgressBar: false, closeOnClick: true, draggable: true, progress: undefined, theme: "light", });
-          setBtnType(false)
-        }
+      .catch(() => {
+        toast.error('Email or password is invalid', { position: "top-right", autoClose: 1000, hideProgressBar: false, closeOnClick: true, draggable: true, progress: undefined, theme: "light", });
+        setBtnType(false)
       })
   }
 

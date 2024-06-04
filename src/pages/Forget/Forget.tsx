@@ -17,7 +17,7 @@ const Forget = () => {
       return
     }
 
-    axios.post('https://shipshop-server.vercel.app//user/forget', { email: data })
+    axios.post('https://shipshop-server.vercel.app/user/forget', { email: data })
       .then((response) => {
         setBtnType(true);
         localStorage.setItem('token', response.data.token);

@@ -27,7 +27,7 @@ const ChangePassword = () => {
     //   toast.error('Token is not valid!', { position: "top-right", autoClose: 1000, hideProgressBar: false, closeOnClick: true, draggable: true, progress: undefined, theme: "light", });
     //   return
     // }
-    axios.patch(`https://shipshop-server.vercel.app//user/reset/${token}`, { password }).then(() => {
+    axios.patch(`https://shipshop-server.vercel.app/user/reset/${token}`, { password }).then(() => {
       toast.success('Password was changed!', { position: "top-right", autoClose: 1000, hideProgressBar: false, closeOnClick: true, draggable: true, progress: undefined, theme: "light", });
       localStorage.removeItem('token')
       setTimeout(() => {

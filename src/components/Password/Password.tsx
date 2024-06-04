@@ -30,7 +30,7 @@ const Password = () => {
       return;
     }
 
-    axios.post('https://shipshop-server.vercel.app//user/update',
+    axios.post('https://shipshop-server.vercel.app/user/update',
       {
         currentPass: password.currentPassword,
         newPass: password.newPassword,

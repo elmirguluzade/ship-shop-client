@@ -69,7 +69,7 @@ const Statement = () => {
       </label>
       <input
         type="text"
-        placeholder="Search by statement.."
+        placeholder="Search"
         id="search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

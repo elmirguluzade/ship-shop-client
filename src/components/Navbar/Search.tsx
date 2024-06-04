@@ -169,7 +169,7 @@ const Search = () => {
       </label>
       <input
         type="text"
-        placeholder="Search by keyword.."
+        placeholder="Search"
         id="search"
         value={filter !== "" ? filter : search}
         onChange={(e) => searchHandler(e.target.value)}

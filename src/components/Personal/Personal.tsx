@@ -7,12 +7,17 @@ import { toast, ToastContainer } from 'react-toastify'
 
 const PersonalInformation = () => {
   const user = useAppSelector(state => state.user)
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
   const [inputType, setInputType] = useState('text');
   const [details, setDetails] = useState<{ name: string, role: string, email: string, birthday: string }>({ 
     name: user.user.name, 
     role: user.user.role, 
     email: user.user.email, 
     birthday: "", })
+
+    window.onresize = (): void => {
+      setInnerWidth(window.innerWidth);
+    };
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -44,18 +49,18 @@ const PersonalInformation = () => {
     <form className={styles.profileContent} onSubmit={submitHandler}>
       <h2>Personal Information</h2>
       <div className={styles.inputs}>
-        <input value={details.name} type="text" placeholder='Name' 
+        <input style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}} value={details.name} type="text" placeholder='Name' 
         onChange={(e) => setDetails({ ...details, name: e.target.value })}/>
       </div>
       <div className={styles.inputs}>
-      <input value={user.user.role} type="text" placeholder='Role' disabled/>
+      <input style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}} value={user.user.role} type="text" placeholder='Role' disabled/>
       </div>
       <div className={styles.inputs}>
-        <input value={details.email} type="text" placeholder='E-mail' 
+        <input style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}} value={details.email} type="text" placeholder='E-mail' 
         onChange={(e) => setDetails({ ...details, email: e.target.value })}/>
       </div>
       <div className={styles.inputs}>
-        <input type={inputType} value={details.birthday}
+        <input style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}} type={inputType} value={details.birthday}
         onChange={(e) => setDetails({ ...details, birthday: e.target.value })}
         onFocus={() => setInputType('date')} onBlur={() => setInputType('text')}
         placeholder={inputType === 'text' ? 'Birthday' : ''}
@@ -63,7 +68,7 @@ const PersonalInformation = () => {
       </div>
       <ToastContainer />
       <div className={styles.btn}>
-        <button>Save changes</button>
+        <button style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}}>Save changes</button>
       </div>
     </form>
   )

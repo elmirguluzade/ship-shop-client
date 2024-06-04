@@ -111,3 +111,30 @@
     }
   }
 }
+
+
+@media (max-width: 768px) {
+  .Cart {
+    margin-top: 100px;
+  }
+  .cartProducts {
+    display: flex;
+    flex-direction: column;
+
+    .products {
+      width: 100% !important;
+    }
+    .total {
+      width: 100% !important;
+    }
+  }
+
+  .productDetails {
+    display: flex;
+    flex-direction: column;
+
+    .productDetails2 {
+      width: 100%;
+    }
+  }
+}

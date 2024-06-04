@@ -26,7 +26,8 @@ export interface singleProductI {
     title: string,
     price: number,
     description: string,
-    images: string[]
+    images: string[],
+    colors: string[]
 }
 
 export interface ProductItem {

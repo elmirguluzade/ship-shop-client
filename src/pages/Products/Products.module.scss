@@ -94,3 +94,18 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .productsContainer {
+    display: flex;
+    flex-direction: column;
+
+    .filters {
+      width: 100% !important;
+    }
+
+    .products {
+      width: 100% !important;
+    }
+  }
+}

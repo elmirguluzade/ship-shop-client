@@ -21,15 +21,15 @@ const Footer = () => {
                     <h3>Contact</h3>
                     <div>
                         <BiMap />
-                        <p>Sumgait City, Heydar Aliyev Avenue 38</p>
+                        <p>Baku City</p>
                     </div>
                     <div>
                         <AiOutlineMail />
-                        <p>hacibalayev.elmeddin@gmail.com</p>
+                        <p>shipshop@gmail.com</p>
                     </div>
                     <div>
                         <BsTelephone />
-                        <p>+994 70 629 29 76</p>
+                        <p>+994 55 706 55 06</p>
                     </div>
                 </div>
             </div>

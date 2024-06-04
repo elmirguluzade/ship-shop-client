@@ -10,8 +10,6 @@ const Favorite = () => {
   const favorite: any = useAppSelector(state => state.favorite)
   const [favoriteProducts, setFavoriteProducts] = useState<any>([])
   const dispatch = useAppDispatch()
-
-  console.log(favorite)
   
   useEffect(() => {
     const favoriteIds = Object.keys(favorite.favouriteItems);
@@ -31,8 +29,10 @@ const Favorite = () => {
             <img src={p.images[0]} alt="Phone" />
             <div className={styles.productInformations}>
               <p>{p.title}</p>
-              <p>{p.price}</p>
-              <BsTrash onClick={() => removeProduct(p._id)}/>
+              <div className={styles.bottom}>
+                <p>{p.price} $</p>
+                <BsTrash className={styles.trash} onClick={() => removeProduct(p._id)}/>
+              </div>
             </div>
           </div>
           ))

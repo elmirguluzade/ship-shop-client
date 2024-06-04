@@ -9,7 +9,12 @@ const Password = () => {
   const [pwVisible, setPwVisible] = useState(false)
   const [pwVisible1, setPwVisible1] = useState(false)
   const [pwVisible2, setPwVisible2] = useState(false)
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
   const id = useAppSelector(state => state.user.isLogged)
+
+  window.onresize = (): void => {
+    setInnerWidth(window.innerWidth);
+  };
 
   const [password, setPassword] = useState<{ currentPassword: string, newPassword: string, confirmPassword: string }>({
     currentPassword: '',
@@ -30,7 +35,7 @@ const Password = () => {
       return;
     }
 
-    axios.post('https://shipshop-server.vercel.app/user/update',
+    axios.post('http://localhost:4000/user/update',
       {
         currentPass: password.currentPassword,
         newPass: password.newPassword,
@@ -69,7 +74,7 @@ const Password = () => {
         </div>
         <ToastContainer />
         <div className={styles.btn}>
-          <button>Save changes</button>
+          <button style={innerWidth <= 768 ? {width: "100%"} : {width: "40%"}}>Save changes</button>
         </div>
       </div>
 

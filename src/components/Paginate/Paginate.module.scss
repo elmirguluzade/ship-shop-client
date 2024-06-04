@@ -8,15 +8,6 @@
   grid-gap: 20px;
   scroll-behavior: smooth;
 
-  // p {
-  //   margin: 10px 0;
-  //   margin-bottom: 20px;
-
-  //   span {
-  //     font-weight: 600;
-  //   }
-  // }
-
   .product {
     box-shadow: 0 2px 8px 0 #c6c6c6;
 
@@ -92,5 +83,12 @@
       background-color: #333;
       color: #fff;
     }
+  }
+}
+
+@media (max-width:768px) {
+  .container {
+    display: grid;
+  grid-template-columns: repeat(1, 1fr);
   }
 }

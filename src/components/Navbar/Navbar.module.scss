@@ -27,7 +27,7 @@
   }
 
   .searchTypeSelect:focus {
-    border-color: #2dd06e;
+    border-color: #ccc;
   }
 
   nav {
@@ -277,6 +277,10 @@
 }
 
 @media (max-width: 768px) {
+  .searchTypeSelect {
+    margin-top: 10px;
+  }
+
   .input {
     margin-top: 10px;
     width: 100% !important;

@@ -12,8 +12,6 @@ const Cart = () => {
     const cart: any = useAppSelector(state => state.cart)
     const dispatch = useAppDispatch()
 
-    console.log(cart.cartItems)
-
     const totalPrice = () => {
         let sum = 0
         cart.cartItems.forEach((c: any) => {

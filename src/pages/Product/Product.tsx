@@ -12,7 +12,7 @@ import {addAllToCart} from '../../redux/features/cartSlice'
 
 const Product = () => {
     const [productCount, setProductCount] = useState(0)
-    const [product, setProduct] = useState<singleProductI>({title: '', price: 0, description: "", images: []})
+    const [product, setProduct] = useState<singleProductI>({title: '', price: 0, description: "", images: [], colors: []})
     const [loading, setLoading] = useState(false)
     const params = useParams()
     const dispatch = useAppDispatch()
@@ -23,7 +23,7 @@ const Product = () => {
 
     useEffect(() => {
         setLoading(true)
-        axios.get(`https://shipshop-server.vercel.app/product/${params.id}`)
+        axios.get(`http://localhost:4000/product/${params.id}`)
             .then(res => {
                 setProduct(res.data.product)
             })
@@ -66,6 +66,13 @@ const Product = () => {
                     <div className={styles.productContent}>
                         <h3>{product.title}</h3>
                         <p>{product.description}</p>
+                        <div className={styles.colors}>
+                            {
+                                product.colors.map((color, i) => (
+                                    <div className={styles.color} key={i} style={{ backgroundColor: color}}></div>
+                                ))
+                            }
+                        </div>
                         <h4>{product.price} $</h4>
                     </div>
                     <div className={styles.counter}>

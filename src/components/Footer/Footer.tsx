@@ -9,7 +9,7 @@ const Footer = () => {
         <div className={styles.Footer}>
             <div className={styles.footerContainer}>
                 <div className={styles.left}>
-                    <div><img src={logo} alt="Logo" /></div>
+                    <div><img src={logo} alt="Logo" height={"50px"}/></div>
                     <div className={styles.icons}>
                         <AiOutlineInstagram />
                         <BsFacebook />

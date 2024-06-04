@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    axios.get("http://localhost:4000/product/category").then((res) => {
+    axios.get("https://shipshop-server.vercel.app/product/category").then((res) => {
       setCategories(res.data.categories);
     });
   }, []);
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
   const logout = () => {
     axios
       .post(
-        "http://localhost:4000/user/logout",
+        "https://shipshop-server.vercel.app/user/logout",
         {
           cart: cart.cartItems,
           favortie: favortie.favouriteItems,

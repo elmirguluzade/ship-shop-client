@@ -50,7 +50,7 @@ const Signup = () => {
       return
     }
     delete formData.checkbox
-    axios.post('http://localhost:4000/user/signup', formData)
+    axios.post('https://shipshop-server.vercel.app//user/signup', formData)
       .then(() => {
         setBtnType(true)
         toast.success('Redirecting to Login', { position: "top-right", autoClose: 1000, hideProgressBar: false, closeOnClick: true, draggable: true, progress: undefined, theme: "light", });

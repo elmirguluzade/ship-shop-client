@@ -10,7 +10,7 @@ const initialState: ProductI = {
 }
 
 export const fetchProducts = createAsyncThunk('product/fetchProducts', async () => {
-    const res = await axios.get('http://localhost:4000/product')
+    const res = await axios.get('https://shipshop-server.vercel.app//product')
     return res.data.products
 })
 

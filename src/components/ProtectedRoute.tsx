@@ -13,7 +13,7 @@ const ProtectedRoute = () => {
     const isLogged = user.isLogged
 
     useEffect(() => {
-        axios.get('http://localhost:4000/user/verify', { withCredentials: true })
+        axios.get('https://shipshop-server.vercel.app//user/verify', { withCredentials: true })
             .then(res => {
                 dispatch(handleLog({ id: res.data.user.id }))
             })

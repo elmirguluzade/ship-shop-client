@@ -1,0 +1,43 @@
+.profileContent {
+  display: flex;
+  flex-direction: column;
+    width: 75%;
+    margin-top: 20px;
+    padding-left: 40px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .inputs {
+      display: flex;
+      gap: 50px;
+      margin-bottom: 20px;
+
+      input {
+        height: 45px;
+        border: 1px solid #e4e4e4;
+        border-radius: 10px;
+        background-color: white;
+        padding-left: 15px;
+        width: 40%;
+        outline: 0;
+      }
+    }
+
+    .btn {
+      width: 80%;
+
+      button {
+        margin-top: 20px;
+        width: 50%;
+        border: none;
+        background-color: #2DD06E;
+        color: white;
+        height: 45px;
+        border-radius: 10px;
+      }
+    }
+
+    
+  }

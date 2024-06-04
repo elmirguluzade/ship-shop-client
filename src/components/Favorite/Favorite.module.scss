@@ -1,0 +1,42 @@
+.product{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .productDetails{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color:white;
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 5px !important; 
+    border-radius: 7px;
+        
+    
+        .productInformations{
+            position: relative;
+
+            p:nth-child(2){
+                text-decoration: line-through;
+            }
+            p:nth-child(3) {
+                position: absolute;
+                top: 40px;
+                left: calc(20% + 10px); 
+                color: red;
+            }
+    
+            p{
+                padding: 10px 0;
+                font-weight: bold;
+            }
+        }
+    }
+}
+

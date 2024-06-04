@@ -1,0 +1,151 @@
+.Login {
+  height: 100vh;
+  display: flex;
+
+  .form {
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .input {
+      position: relative;
+      input {
+        height: 48px;
+        background-color: #f2f2f2;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+        border-radius: 10px;
+        margin: 15px 0;
+        margin-top: 2px;
+        width: 320px;
+      }
+
+      svg{
+        position: absolute;
+        right: 5px;
+        top: 40%;
+        font-size: 20px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 999;
+      }
+    }
+
+    .checkboxInput {
+      display: flex;
+      label {
+        font-size: 14px;
+        margin-left: 5px;
+      }
+      a {
+        color: #2d9cdb;
+      }
+    }
+
+    .forget {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        font-size: 14px;
+        color: #2d9cdb;
+      }
+    }
+    form {
+      button {
+        background-color: #2dd06e;
+        color: white;
+        border: none;
+        outline: none;
+        width: 320px;
+        height: 48px;
+        border-radius: 10px;
+        margin: 20px 0;
+
+        & + p {
+          color: #bdbdbd;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .loginWith {
+      margin: 20px 0;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+
+  .loginImg {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+      color: #2d9cdb;
+      margin: 10px 0;
+      display: inline-block;
+    }
+  }
+
+  .vertificaton {
+    color: #bdbdbd;
+    width: 320px;
+    margin: 15px 0 30px 0;
+  }
+
+  .forgetBtn {
+    margin: 20px 0;
+    background-color: #2dd06e;
+    color: white;
+    border: none;
+    outline: none;
+    width: 320px;
+    height: 48px;
+    border-radius: 10px;
+    margin-top: 10px !important;
+  }
+
+  .loadingForgetBtn {
+    margin: 20px 0;
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+    color: white;
+    border: none;
+    outline: none;
+    width: 320px;
+    height: 48px;
+    border-radius: 10px;
+    margin-top: 10px !important;
+  }
+
+  .loadingBtn{
+    background-color: #ccc !important;
+    cursor: not-allowed !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginImg {
+    display: none !important;
+  }
+}
+
+// @media (min-width: 1320px){
+//   .loginImg img{
+//     width: 50%;
+//   }
+// }

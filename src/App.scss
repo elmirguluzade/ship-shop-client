@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Bold";
+  src: local("EuclidCircularABold"),
+    url("./fonts/EuclidCircularABold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Light";
+  src: local("EuclidCircularALight"),
+    url("./assets/fonts/EuclidCircularALight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: local("EuclidCircularAMedium"),
+    url("./assets/fonts/EuclidCircularAMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: local("EuclidCircularARegular"),
+    url("./assets/fonts/EuclidCircularARegular.ttf") format("truetype");
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Regular";
+  scroll-behavior: smooth;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+button{
+  cursor: pointer;
+}
+

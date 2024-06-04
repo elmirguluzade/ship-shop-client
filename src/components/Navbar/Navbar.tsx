@@ -5,6 +5,7 @@ import cartI from "../../assets/shopping-cart.png";
 import Search from "./Search";
 import Statement from "./Statement";
 import axios from "axios";
+import logo from '../../assets/logo4.png'
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import NavMenu from "./NavMenu";
 import { Link } from "react-router-dom";
@@ -56,7 +57,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/user/verify", { withCredentials: true })
+      .get("https://shipshop-server.vercel.app/user/verify", { withCredentials: true })
       .then((res) => {
         dispatch(handleLog({ id: res.data.user.id }));
       })
@@ -100,10 +101,7 @@ const Navbar: React.FC = () => {
           ) : (
             <RxCross1 onClick={() => setMenuState(!menuState)} />
           )}
-          {/* <Link to={'/'}><img src={logo} alt="Logo" /></Link> */}
-          <Link to={"/"}>
-            <h2>Logo</h2>
-          </Link>
+          <Link to={'/'}><img src={logo} alt="Logo" /></Link>
         </div>
         {innerWidth > 768 ?  <div className={styles.searchContainer}>
           <select

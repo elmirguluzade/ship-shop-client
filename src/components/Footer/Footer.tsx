@@ -2,13 +2,14 @@ import styles from './Footer.module.scss'
 import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineTwitter, AiOutlineMail } from 'react-icons/ai'
 import { BsFacebook, BsTelephone } from 'react-icons/bs'
 import { BiMap } from 'react-icons/bi'
+import logo from '../../assets/logo4.png'
 
 const Footer = () => {
     return (
         <div className={styles.Footer}>
             <div className={styles.footerContainer}>
                 <div className={styles.left}>
-                    {/* <div><img src={logo} alt="Logo" /></div> */}
+                    <div><img src={logo} alt="Logo" /></div>
                     <div><h2>Logo</h2></div>
                     <div className={styles.icons}>
                         <AiOutlineInstagram />

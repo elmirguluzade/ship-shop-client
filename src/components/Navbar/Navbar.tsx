@@ -38,9 +38,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   const logout = () => {
-    axios
-      .post(
-        "https://shipshop-server.vercel.app/user/logout",
+    axios.post("https://shipshop-server.vercel.app/user/logout",
         {
           cart: cart.cartItems,
           favortie: favortie.favouriteItems,
@@ -50,6 +48,8 @@ const Navbar: React.FC = () => {
       )
       .then(() => {
         navigate("/");
+        localStorage.removeItem('favouriteItems') 
+        localStorage.removeItem('cart') 
         dispatch(handleLog({ id: "" }));
       })
       .catch((err) => console.log(err));

@@ -39,7 +39,7 @@ const Login = () => {
         setTimeout(() => {
           dispatch(handleUser(res.data.user))
           dispatch(restoreCart(res.data.user.cart))
-          localStorage.setItem('user', JSON.stringify({name: user.name, email: user.email, birthday: user.birtday, role: user.role}))
+          localStorage.setItem('user', JSON.stringify({name: res.data.user.name, email: res.data.user.email, birthday: res.data.user.birthday, role: res.data.user.role}))
           setBtnType(true)
           navigate('/')
         }, 1000)

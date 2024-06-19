@@ -12,6 +12,11 @@ const Signup = () => {
   const [formData, setFormData] = useState<ISignUp>({ name: '', email: '', password: '', checkbox: false })
   const [btnType, setBtnType] = useState(false)
   const navigate = useNavigate()
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
+
+  window.onresize = (): void => {
+    setInnerWidth(window.innerWidth);
+  };
 
   const validateEmail = (email: string): (RegExpMatchArray | null) => {
     return email.toLowerCase().match(
@@ -82,8 +87,11 @@ const Signup = () => {
             <input type="password" name="password" placeholder='Password' value={formData.password} onChange={(e) => handleData(e.target.name, e.target.value)} />
           </div>
           <div className={styles.checkboxInput}>
+            <div>
             <input type="checkbox" placeholder='Password' name="checkbox" id='checkbox' onChange={(e) => handleData(e.target.name)} />
             <label htmlFor="checkbox">Accept the <Link to={'/signup'}>Terms and Conditions</Link></label>
+            </div>
+            <div>{innerWidth < 768 ? <Link to={"/login"} className={styles.loginText}>Log In</Link> : null}</div>
           </div>
           <button disabled={btnType} className={btnType ? styles.loadingBtn : ''}>Sign Up</button>
           <p>or connect with</p>

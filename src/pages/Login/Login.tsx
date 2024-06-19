@@ -12,11 +12,15 @@ import { handleUser } from '../../redux/features/userSlice'
 
 const Login = () => {
   const [formData, setFormData] = useState<{ email: string, password: string }>({ email: '', password: '' })
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
   const navigate = useNavigate()
   const [btnType, setBtnType] = useState(false)
   const [pwVisible, setPwVisible] = useState(false)
   const dispatch = useDispatch()
 
+  window.onresize = (): void => {
+    setInnerWidth(window.innerWidth);
+  };
   const handleData = (name: string, val: string): void => {
     setFormData({ ...formData, [name]: val })
   }
@@ -61,6 +65,7 @@ const Login = () => {
             {pwVisible ? <AiOutlineEye onClick={() => setPwVisible(!pwVisible)} /> : <AiOutlineEyeInvisible onClick={() => setPwVisible(!pwVisible)} />}
           </div>
           <p className={styles.forget}>
+            {innerWidth < 768 ? <Link to={"/signup"}>Sign Up</Link> : null}
             <Link to={'/forget'}>Forgot password?</Link>
           </p>
           <button disabled={btnType} className={btnType ? styles.loadingBtn : ''}>Login</button>

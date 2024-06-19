@@ -72,10 +72,10 @@ const Password = () => {
             onChange={(e) => setPassword({ ...password, confirmPassword: e.target.value })} />
           {pwVisible2 ? <AiOutlineEye onClick={() => setPwVisible2(!pwVisible2)} /> : <AiOutlineEyeInvisible onClick={() => setPwVisible2(!pwVisible2)} />}
         </div>
-        <ToastContainer />
-        <div className={styles.btn}>
-          <button className={styles.btn} style={innerWidth <= 768 ? {width: "40%"} : {width: "40%"}}>Save changes</button>
+        <div className={styles.boxes}>
+          <button className={styles.btn}>Save changes</button>
         </div>
+        <ToastContainer />
       </div>
 
     </form>

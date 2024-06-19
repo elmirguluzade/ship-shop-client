@@ -49,6 +49,7 @@ const Navbar: React.FC = () => {
       .then(() => {
         navigate("/");
         localStorage.removeItem('favorite') 
+        localStorage.removeItem('user') 
         localStorage.removeItem('cart') 
         dispatch(handleLog({ id: "" }));
       })

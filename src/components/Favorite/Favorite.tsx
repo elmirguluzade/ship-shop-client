@@ -23,19 +23,19 @@ const Favorite = () => {
 
   return (
       <div className={styles.product}>
-        {
-          favoriteProducts.map((p: any) => (
-          <div className={styles.productDetails}>
-            <img src={p.images[0]} alt="Phone" />
-            <div className={styles.productInformations}>
-              <p>{p.title}</p>
-              <div className={styles.bottom}>
-                <p>{p.price} $</p>
-                <BsTrash className={styles.trash} onClick={() => removeProduct(p._id)}/>
+          {
+          favoriteProducts.length !== 0 ? favoriteProducts.map((p: any) => (
+            <div className={styles.productDetails}>
+              <img src={p.images[0]} alt="Phone" />
+              <div className={styles.productInformations}>
+                <p>{p.title}</p>
+                <div className={styles.bottom}>
+                  <p>{p.price} $</p>
+                  <BsTrash className={styles.trash} onClick={() => removeProduct(p._id)}/>
+                </div>
               </div>
             </div>
-          </div>
-          ))
+            )) : <h2 style={{marginTop: "20px", marginLeft: "20px"}}>Empty</h2>
         }
       </div>
   )

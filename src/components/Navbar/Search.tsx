@@ -26,7 +26,6 @@ const Search = () => {
   const dispatch = useAppDispatch();
 
   const searchHandler = (val: string) => {
-    console.log(filter)
     if(filter === "smartphones" || filter === "laptops"){
       setSearch(filter)
       setFilter("")

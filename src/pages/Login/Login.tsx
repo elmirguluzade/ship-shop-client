@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { restoreCart } from '../../redux/features/cartSlice'
 import { handleUser } from '../../redux/features/userSlice'
+import { useAppSelector } from '../../redux/store'
 
 const Login = () => {
   const [formData, setFormData] = useState<{ email: string, password: string }>({ email: '', password: '' })
@@ -16,6 +17,7 @@ const Login = () => {
   const [btnType, setBtnType] = useState(false)
   const [pwVisible, setPwVisible] = useState(false)
   const dispatch = useDispatch()
+  const user = useAppSelector(state => state.user.user)
 
   const handleData = (name: string, val: string): void => {
     setFormData({ ...formData, [name]: val })
@@ -37,6 +39,7 @@ const Login = () => {
         setTimeout(() => {
           dispatch(handleUser(res.data.user))
           dispatch(restoreCart(res.data.user.cart))
+          localStorage.setItem('user', JSON.stringify({name: user.name, email: user.email, birthday: user.birtday, role: user.role}))
           setBtnType(true)
           navigate('/')
         }, 1000)

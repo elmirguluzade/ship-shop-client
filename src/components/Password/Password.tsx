@@ -9,12 +9,7 @@ const Password = () => {
   const [pwVisible, setPwVisible] = useState(false)
   const [pwVisible1, setPwVisible1] = useState(false)
   const [pwVisible2, setPwVisible2] = useState(false)
-  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
   const id = useAppSelector(state => state.user.isLogged)
-
-  window.onresize = (): void => {
-    setInnerWidth(window.innerWidth);
-  };
 
   const [password, setPassword] = useState<{ currentPassword: string, newPassword: string, confirmPassword: string }>({
     currentPassword: '',

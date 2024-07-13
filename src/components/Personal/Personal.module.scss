@@ -36,3 +36,10 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+    .profileContent{
+      padding-left: 0 !important;
+      text-align: center;
+    }
+}

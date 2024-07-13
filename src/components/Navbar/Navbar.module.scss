@@ -290,6 +290,13 @@
     }
   }
 
+  .cartItems{
+    top: 80px !important;
+    z-index: 999;
+    right: 0 !important;
+    width: 80% !important;
+  }
+
   .menu {
     ul {
       flex-direction: column;
